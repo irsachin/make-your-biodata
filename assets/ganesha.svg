@@ -1,0 +1,29 @@
+<svg class="ganesha-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.1 500.79">
+  <g transform="translate(-112.25 -5.5633)" stroke="currentColor">
+    <path d="m254.42 6.5633s-28.953 30.079-20.203 43.437c7.567 11.552 34.3 10.825 41.416-1.0102 8.1479-13.55-21.213-42.426-21.213-42.426z" fill="none" stroke-width="1px"/>
+    <path d="m194 63c15 20 105 20 120 0-40 5-75 5-120 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path d="m254.42 6.5633s-28.953 30.079-20.203 43.437c7.567 11.552 34.3 10.825 41.416-1.0102 8.1479-13.55-21.213-42.426-21.213-42.426z" fill="none" stroke-width="1px"/>
+    <path d="m184.18 80.607c18.125 20 126.88 20 145 0-48.333 5-90.625 5-145 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(-112.25 -5.5633)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="m254.42 6.5633s-28.953 30.079-20.203 43.437c7.567 11.552 34.3 10.825 41.416-1.0102 8.1479-13.55-21.213-42.426-21.213-42.426z"/>
+    <path d="m169 97.75c21.875 20 153.12 20 175 0-58.333 5-109.38 5-175 0z"/>
+  </g>
+
+  <g transform="translate(-112.25 -5.5633)" fill="none" stroke="currentColor" stroke-width="6">
+    <path d="m171.71 212.19s-56.46-42.706-56.46-64.874 53.474-38.542 86.659-14.417c33.19 24.12 12.09 94.1 22.09 124.1s79.177 40.235 81.639 77.729c2.8316 43.126-93.502 59.423-81.407 100.92 4.77 16.35 27.58 38.44 27.58 38.44"/>
+    <path d="m331.9 232.61s64.905-32.509 59.086-60.069c-5.8191-27.56-59.984-50.432-88.908-37.854-28.93 12.58-41.63 63.44-38.08 97.31 3.5531 33.866 73.013 61.436 60 110s-75.382 56.147-85 85c-5 15 15 30 15 30"/>
+  </g>
+
+  <g transform="translate(-112.25 -5.5633)" stroke="currentColor">
+    <path d="m250 130c-7.205 7.0968-13.919 13.66-10 20 3.5049 5.671 16.495 5.671 20 0 3.9186-6.3404-11.195-8.8054-10-20z" fill="currentColor"/>
+    <path d="m235 155c5.4789 6.8959 17.639 10.449 25 5" fill="none" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(-112.25 -5.5633)" fill="none" stroke="currentColor" stroke-width="5">
+    <path d="m232 479.86c13.69 5.1503 26.983 5.5965 40 0"/>
+    <path d="m237 489c9.4233 3.4601 19.235 4.5875 30 0"/>
+    <path transform="translate(19.727 6.8571)" d="m235 494.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 1 1 5 0z"/>
+  </g>
+</svg>

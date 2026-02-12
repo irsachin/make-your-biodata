@@ -1,0 +1,53 @@
+.page.template4{
+  width:794px;
+  min-height:auto;
+  background:#ffffff;
+  color:#222;
+  padding:100px 90px;
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+  font-family:'Poppins', sans-serif;
+}
+
+/* Simple Minimal Frame */
+.page.template4::before{
+  content:"";
+  position:absolute;
+  top:30px;
+  left:30px;
+  right:30px;
+  bottom:30px;
+  border:2px solid #222;
+}
+
+.top-title{
+  text-align:center;
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:40px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:24px;
+  color:#222;
+  margin:40px 0 25px;
+  font-weight:600;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:14px;
+  font-size:16px;
+}
+
+.label{
+  width:45%;
+  font-weight:600;
+}
+
+.value{
+  width:50%;
+}

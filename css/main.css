@@ -1,0 +1,113 @@
+/* marriage-biodata/css/main.css */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f2f2f2;
+}
+
+.container{
+  display:flex;
+  min-height:100vh;
+}
+
+/* FORM PANEL */
+.form-panel{
+  width:40%;
+  background:#ffffff;
+  padding:30px;
+  overflow-y:auto;
+  border-right:1px solid #ddd;
+}
+
+.form-panel h2{
+  margin-top:25px;
+  font-size:22px;
+}
+
+.field{
+  display:flex;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.field input{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  flex:1;
+}
+
+.field button{
+  background:#e74c3c;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+button{
+  margin-top:10px;
+  padding:10px 16px;
+  border:none;
+  background:#2c3e50;
+  color:white;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+button:hover{
+  background:#1a252f;
+}
+
+.download-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+}
+
+/* PREVIEW PANEL */
+.preview-panel{
+  width:60%;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:30px;
+  background:#e5e5e5;
+}
+
+#biodata-container{
+  background:white;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.ganesha-icon{
+  width:30px;
+  height:auto;
+}
+.ganesha-icon path{
+  stroke:currentColor;
+  stroke-width:12;   /* increase for boldness */
+}
+
+.page{
+  position:relative;
+}
+
+/* Watermark */
+.watermark{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) rotate(-25deg);
+  font-size:120px;
+  font-weight:700;
+  color:rgba(255, 255, 255, 0.05);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+}
+.template2 .watermark,
+.template4 .watermark{
+  color:rgba(0, 0, 0, 0.05);
+}
