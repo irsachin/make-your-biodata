@@ -2,6 +2,7 @@
 
 .page.template1{
   width:794px;
+  max-width:100%;
   min-height:auto;
   background:#7b0000;
   color:#ffffff;
@@ -91,4 +92,78 @@
   margin-bottom:10px;
 }
 
+/* ===============================
+   RESPONSIVE ADJUSTMENTS
+================================= */
 
+/* Tablet */
+@media (max-width:768px){
+  .page.template1{
+    width:100%;
+    padding:50px 30px;
+  }
+
+  .page.template1::before{
+    top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+  }
+
+  .page.template1::after{
+    top:30px;
+    left:30px;
+    right:30px;
+    bottom:30px;
+  }
+
+  .top-title{
+    font-size:26px;
+    margin-bottom:25px;
+  }
+
+  .section-title{
+    font-size:22px;
+    margin:25px 0 15px;
+  }
+
+  .row{
+    font-size:14px;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .row strong,
+  .row span{
+    width:100%;
+  }
+
+  .corner{
+    width:90px;
+    height:90px;
+  }
+
+  .top-left{ top:-45px; left:-45px; }
+  .top-right{ top:-45px; right:-45px; }
+  .bottom-left{ bottom:-45px; left:-45px; }
+  .bottom-right{ bottom:-45px; right:-45px; }
+}
+
+/* Small phones */
+@media (max-width:480px){
+  .page.template1{
+    padding:40px 20px;
+  }
+
+  .top-title{
+    font-size:22px;
+  }
+
+  .section-title{
+    font-size:18px;
+  }
+
+  .row{
+    font-size:13px;
+  }
+}

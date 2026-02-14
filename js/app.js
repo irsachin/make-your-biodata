@@ -30,14 +30,22 @@ function loadDefaults() {
   // Personal
   addField("personal", "Name", "");
   addField("personal", "Date of Birth", "");
+  addField("personal", "Date of Time", "");
+  addField("personal", "Complexion", "");
+  addField("personal", "Height", "");
   addField("personal", "Education", "");
   addField("personal", "Occupation", "");
 
   // Family
   addField("family", "Father", "");
+  addField("family", "Father's Occupation", "");
   addField("family", "Mother", "");
+  addField("family", "Mother's Occupation", "");
   addField("family", "Brother", "");
+  addField("family", "Brother's Occupation", "");
   addField("family", "Sister", "");
+  addField("family", "Sister's Occupation", "");
+  
 
   // Contact
   addField("contact", "Contact Person", "");
