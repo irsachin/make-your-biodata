@@ -30,7 +30,7 @@ function loadDefaults() {
   // Personal
   addField("personal", "Name", "");
   addField("personal", "Date of Birth", "");
-  addField("personal", "Date of Time", "");
+  addField("personal", "Time of Birth", "");
   addField("personal", "Complexion", "");
   addField("personal", "Height", "");
   addField("personal", "Education", "");
@@ -45,7 +45,6 @@ function loadDefaults() {
   addField("family", "Brother's Occupation", "");
   addField("family", "Sister", "");
   addField("family", "Sister's Occupation", "");
-  
 
   // Contact
   addField("contact", "Contact Person", "");
@@ -120,6 +119,8 @@ function addDragEvents(el) {
     const dragging = document.querySelector(".dragging");
     const afterElement = getDragAfterElement(container, e.clientY);
 
+    if (!dragging) return;
+
     if (afterElement == null) {
       container.appendChild(dragging);
     } else {
@@ -152,9 +153,9 @@ function getDragAfterElement(container, y) {
    DOWNLOAD FUNCTIONS
 ============================= */
 function downloadPDF() {
-  const element = document.getElementById("biodata-container");
+  const element = document.querySelector(".page");
 
-  if (!element || element.innerHTML.trim() === "") {
+  if (!element) {
     alert("Please update preview before downloading.");
     return;
   }
@@ -163,10 +164,13 @@ function downloadPDF() {
     margin: 0,
     filename: "Biodata.pdf",
     image: { type: "jpeg", quality: 1 },
-    html2canvas: { scale: 2, useCORS: true },
+    html2canvas: {
+      scale: 2,
+      useCORS: true
+    },
     jsPDF: {
       unit: "px",
-      format: [794, 1123],
+      format: [794, element.offsetHeight],
       orientation: "portrait"
     }
   };
@@ -175,14 +179,17 @@ function downloadPDF() {
 }
 
 function downloadImage() {
-  const element = document.getElementById("biodata-container");
+  const element = document.querySelector(".page");
 
-  if (!element || element.innerHTML.trim() === "") {
+  if (!element) {
     alert("Please update preview before downloading.");
     return;
   }
 
-  html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
+  html2canvas(element, {
+    scale: 2,
+    useCORS: true
+  }).then(canvas => {
     const link = document.createElement("a");
     link.download = "Biodata.png";
     link.href = canvas.toDataURL("image/png");
