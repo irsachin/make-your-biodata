@@ -577,8 +577,8 @@ button:hover{
    PAGE STRUCTURE
 ================================= */
 .page{
-  width:100%;
-  max-width:794px;
+  width:794px !important;
+  max-width:100% !important;
   margin:auto;
   min-height:auto;
   padding:100px 90px;

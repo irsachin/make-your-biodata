@@ -27,7 +27,6 @@ function addField(section, label = "", value = "") {
    DEFAULT DATA
 ============================= */
 function loadDefaults() {
-  // Personal
   addField("personal", "Name", "");
   addField("personal", "Date of Birth", "");
   addField("personal", "Time of Birth", "");
@@ -36,7 +35,6 @@ function loadDefaults() {
   addField("personal", "Education", "");
   addField("personal", "Occupation", "");
 
-  // Family
   addField("family", "Father", "");
   addField("family", "Father's Occupation", "");
   addField("family", "Mother", "");
@@ -46,7 +44,6 @@ function loadDefaults() {
   addField("family", "Sister", "");
   addField("family", "Sister's Occupation", "");
 
-  // Contact
   addField("contact", "Contact Person", "");
   addField("contact", "Phone", "");
   addField("contact", "Address", "");
@@ -88,10 +85,8 @@ function updatePreview() {
 function changeTemplate(num) {
   currentTemplate = num;
 
-  // Change CSS
   document.getElementById("templateStyle").href = `css/template${num}.css`;
 
-  // Load template HTML
   fetch(`templates/template${num}.html`)
     .then(res => res.text())
     .then(html => {
@@ -150,15 +145,43 @@ function getDragAfterElement(container, y) {
 }
 
 /* =============================
-   DOWNLOAD FUNCTIONS
+   CREATE FIXED EXPORT CLONE
+============================= */
+function createExportClone() {
+  const original = document.querySelector(".page");
+  if (!original) {
+    alert("Please update preview before downloading.");
+    return null;
+  }
+
+  const clone = original.cloneNode(true);
+
+  const wrapper = document.createElement("div");
+  wrapper.style.position = "fixed";
+  wrapper.style.left = "-9999px";
+  wrapper.style.top = "0";
+  wrapper.style.width = "794px";
+  wrapper.style.background = "#fff";
+  wrapper.style.zIndex = "-1";
+
+  clone.style.transform = "none";
+  clone.style.width = "794px";
+  clone.style.maxWidth = "794px";
+
+  wrapper.appendChild(clone);
+  document.body.appendChild(wrapper);
+
+  return { wrapper, clone };
+}
+
+/* =============================
+   DOWNLOAD PDF (Desktop Layout)
 ============================= */
 function downloadPDF() {
-  const element = document.querySelector(".page");
+  const exportObj = createExportClone();
+  if (!exportObj) return;
 
-  if (!element) {
-    alert("Please update preview before downloading.");
-    return;
-  }
+  const { wrapper, clone } = exportObj;
 
   const opt = {
     margin: 0,
@@ -170,23 +193,30 @@ function downloadPDF() {
     },
     jsPDF: {
       unit: "px",
-      format: [794, element.offsetHeight],
+      format: [794, clone.offsetHeight],
       orientation: "portrait"
     }
   };
 
-  html2pdf().set(opt).from(element).save();
+  html2pdf()
+    .set(opt)
+    .from(clone)
+    .save()
+    .then(() => {
+      document.body.removeChild(wrapper);
+    });
 }
 
+/* =============================
+   DOWNLOAD IMAGE (Desktop Layout)
+============================= */
 function downloadImage() {
-  const element = document.querySelector(".page");
+  const exportObj = createExportClone();
+  if (!exportObj) return;
 
-  if (!element) {
-    alert("Please update preview before downloading.");
-    return;
-  }
+  const { wrapper, clone } = exportObj;
 
-  html2canvas(element, {
+  html2canvas(clone, {
     scale: 2,
     useCORS: true
   }).then(canvas => {
@@ -194,6 +224,8 @@ function downloadImage() {
     link.download = "Biodata.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
+
+    document.body.removeChild(wrapper);
   });
 }
 
